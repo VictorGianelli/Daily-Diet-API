@@ -1,0 +1,16 @@
+services:
+  db:
+    # skip-grant-tables: true
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin123'
+      MYSQL_DATABASE: 'meal-crud'
+      MYSQL_ROOT_PASSWORD: 'admin123'
+    ports:
+      - '3307:3307'
+    expose:
+      - '3307'
+    volumes:
+      - /python/Trilha_Python/Mysql:/var/lib/mysql
